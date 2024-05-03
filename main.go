@@ -1,44 +1,35 @@
 package main
 
-import "fmt"
-
-var someName = "hello"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
+	// greetings := "hello there friends"
+	// fmt.Println(strings.Contains(greetings, "hellookusa"))
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	// the original string remains unchanged
+	// fmt.Println(strings.ReplaceAll(greetings, "hello", "hi"))
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// fmt.Println(strings.Split(greetings, " "))
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
+	// fmt.Println(strings.ToUpper(greetings))
+	// fmt.Println(strings.Index(greetings, "th"))
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	ages := []int{23, 45, 67, 89, 90, 34, 56}
+	sort.Ints(ages) // changes the original slice
+	// fmt.Println(ages)
 
-	// nameFour := "Yoshi"
+	names := []string{"yoshi", "robert", "tommy", "solo", "eddie"}
 
-	// fmt.Println(nameFour, someName, nameOne)
+	// index := sort.SearchInts(ages, 100)
 
-	// ints
+	// fmt.Println(index)
 
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
+	sort.Strings(names)
 
-	fmt.Println(ageOne, ageTwo, ageThree)
+	// fmt.Println(names)
 
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
-
+	fmt.Println(sort.SearchStrings(names, "robert"))
 }
