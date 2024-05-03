@@ -2,43 +2,34 @@ package main
 
 import "fmt"
 
-var someName = "hello"
-
 func main() {
+	// arrays
+	// var ages [3]int = [3]int{20, 25, 35}
+	var ages = [3]int{20, 25, 35}
+	names := [4]string{"yoshi", "mario", "peach", "bowser"}
+	names[1] = "rachael"
+	fmt.Println(ages, len(ages))
+	fmt.Println(names, len(names))
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	// slices (use arrays under the hood)
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	var scores = []int{100, 50, 60}
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
+	scores[2] = 90
+	scores = append(scores, 85)
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	fmt.Println(scores, len(scores))
 
-	// nameFour := "Yoshi"
+	// slice ranges
+	rangeOne := names[1:3]
 
-	// fmt.Println(nameFour, someName, nameOne)
+	rangeTwo := names[2:]
+	rangeThree := names[:3]
 
-	// ints
+	fmt.Println(rangeOne, rangeTwo, rangeThree)
 
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
+	rangeOne = append(rangeOne, "koopa")
 
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
+	fmt.Println(rangeOne)
 
 }
