@@ -2,43 +2,30 @@ package main
 
 import "fmt"
 
-var someName = "hello"
-
 func main() {
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	age := 33
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	name := "robert"
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
+	// Print
+	fmt.Print("hello, ")
+	fmt.Print("World! \n")
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// Printf() Formatted strings %_ format specifier
 
-	// nameFour := "Yoshi"
+	fmt.Println("my age is ", age, " and my name is ", name)
 
-	// fmt.Println(nameFour, someName, nameOne)
+	fmt.Printf("my age is %v and my name is %v \n", age, name)
+	fmt.Printf("my age is %v and my name is %q \n", age, name)
 
-	// ints
+	fmt.Printf("age is of type %T \n", age)
 
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
+	fmt.Printf("you scored %0.1f points! \n", 222.55)
 
-	fmt.Println(ageOne, ageTwo, ageThree)
+	// Sprintf saving variable to string
+	str := fmt.Sprintf("my age is %v and my name is %v \n", age, name)
 
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
+	fmt.Println("saved string is:  ", str)
 
 }
