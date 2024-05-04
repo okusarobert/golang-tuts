@@ -2,43 +2,33 @@ package main
 
 import "fmt"
 
-var someName = "hello"
+func updateName(x string) {
+	x = "Robert"
+}
+
+func updateMenu(y map[string]float64) {
+	y["coffee"] = 1.99
+}
 
 func main() {
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	// group A types --> strings, ints, bools, floats, arrays, structs
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// group B types --> slice, maps, functions
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
+	// name := "Okusa"
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// updateName(name)
 
-	// nameFour := "Yoshi"
+	// fmt.Println(name)
 
-	// fmt.Println(nameFour, someName, nameOne)
+	menu := map[string]float64{
+		"ice cream": 3.55,
+		"pie":       5.95,
+	}
 
-	// ints
+	updateMenu(menu)
 
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
+	fmt.Println(menu)
 
 }
