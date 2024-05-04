@@ -2,43 +2,36 @@ package main
 
 import "fmt"
 
-var someName = "hello"
-
 func main() {
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	age := 45
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	fmt.Println(age <= 50)
+	fmt.Println(age >= 50)
+	fmt.Println(age == 45)
+	fmt.Println(age != 50)
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
+	// if age < 30 {
+	// 	fmt.Println("age is less then 30")
+	// } else if age < 40 {
+	// 	fmt.Println("age is less than 40")
+	// } else if age >= 45 {
+	// 	fmt.Println("age is greater than or equal to 45")
+	// }
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	names := []string{"yoshi", "okusa", "robert", "peach", "bowser"}
 
-	// nameFour := "Yoshi"
+	for index, value := range names {
+		if index == 1 {
+			fmt.Println("continuing at pos", index)
+			continue
+		}
 
-	// fmt.Println(nameFour, someName, nameOne)
-
-	// ints
-
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
+		if index > 2 {
+			fmt.Printf("breaking at pos %v of value %v \n", index, value)
+			break
+		}
+		fmt.Printf("the value at %v is %v \n", index, value)
+	}
 
 }
