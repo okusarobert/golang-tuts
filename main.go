@@ -2,43 +2,31 @@ package main
 
 import "fmt"
 
-var someName = "hello"
-
 func main() {
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	// x := 0
+	// for x < 5 {
+	// 	fmt.Println("value of x : ", x)
+	// 	x++
+	// }
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// for i := 0; i < 5; i++ {
+	// 	fmt.Println("value of i: ", i)
+	// }
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
+	names := []string{"okusa", "john", "asingwire", "robert", "rachael"}
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// for i := 0; i < len(names); i++ {
+	// 	fmt.Println("name at ", names[i])
+	// }
 
-	// nameFour := "Yoshi"
+	// for _, value := range names {
+	// 	fmt.Println(value)
+	// }
 
-	// fmt.Println(nameFour, someName, nameOne)
+	// for index, value := range names {
+	// 	fmt.Printf("value at index %d is %v \n", index, value)
+	// }
 
-	// ints
-
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
-
+	fmt.Println(names)
 }
