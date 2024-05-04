@@ -1,44 +1,84 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
 
-var someName = "hello"
+func getInput(prompt string, r *bufio.Reader) (string, error) {
+	fmt.Print(prompt)
+	input, error := r.ReadString('\n')
+
+	return strings.TrimSpace(input), error
+}
+
+func createBill() bill {
+
+	reader := bufio.NewReader(os.Stdin)
+
+	name, _ := getInput("Create a new bill: ", reader)
+	b := newBill(name)
+	fmt.Print("Created bill - ", b.name, "\n")
+
+	return b
+}
+
+func promptOptions(b *bill) {
+	reader := bufio.NewReader(os.Stdin)
+
+	option, _ := getInput("Choose option (a - add item, s - save the bill, t - add tip): ", reader)
+
+	switch option {
+	case "a":
+		name, _ := getInput("Item name: ", reader)
+		price, _ := getInput("Item price: ", reader)
+		convertedPrice, error := strconv.ParseFloat(strings.TrimSpace(price), 64)
+		if error != nil {
+			fmt.Println("The price must be a number")
+			promptOptions(b)
+		}
+		b.addItem(name, convertedPrice)
+
+		fmt.Println("Item added ", name, price)
+		promptOptions(b)
+		break
+	case "s":
+		b.save()
+		fmt.Println("you saved the file - ", b.name)
+		break
+	case "t":
+		tip, _ := getInput("Enter tip amount: ", reader)
+		convertedTip, error := strconv.ParseFloat(strings.TrimSpace(tip), 64)
+		if error != nil {
+			fmt.Println("The tip must be a number")
+			promptOptions(b)
+		}
+		b.updateTip(convertedTip)
+		promptOptions(b)
+		break
+	default:
+		fmt.Println("Invalid option ...")
+		promptOptions(b)
+	}
+}
 
 func main() {
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	myBill := createBill()
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	promptOptions(&myBill)
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
+	// myBill.format()
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// myBill.updateTip(10)
 
-	// nameFour := "Yoshi"
+	// myBill.addItem("pie", 5.99)
+	// myBill.addItem("cake", 2.99)
+	// myBill.addItem("soda", 1.99)
+	// myBill.addItem("ice cream", 0.51)
 
-	// fmt.Println(nameFour, someName, nameOne)
-
-	// ints
-
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
-
+	fmt.Println(myBill.format())
 }

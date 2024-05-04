@@ -1,0 +1,6 @@
+Bill break down 
+cake:                     ...$4.5 
+coffee:                   ...$2.99 
+katogo:                   ...$1.55 
+tip:                      ...$3.99 
+total:                    ...$13.03 
