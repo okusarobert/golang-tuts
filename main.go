@@ -1,44 +1,39 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-var someName = "hello"
+func getInitials(n string) (string, string) {
+	s := strings.ToUpper(n)
+	names := strings.Split(s, " ")
+
+	var initials []string
+
+	for _, v := range names {
+		initials = append(initials, v[:1])
+
+	}
+
+	if len(initials) > 1 {
+		return initials[0], initials[1]
+	}
+	return initials[0], "_"
+}
 
 func main() {
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	fn1, sn1 := getInitials("tifa lockhart")
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	fmt.Println(fn1, sn1)
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
+	fn2, sn2 := getInitials("cloud strife")
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	fmt.Println(fn2, sn2)
 
-	// nameFour := "Yoshi"
+	fn3, sn3 := getInitials("barret")
 
-	// fmt.Println(nameFour, someName, nameOne)
-
-	// ints
-
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
+	fmt.Println(fn3, sn3)
 
 }
