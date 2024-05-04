@@ -2,43 +2,37 @@ package main
 
 import "fmt"
 
-var someName = "hello"
-
 func main() {
+	// menu := map[string]float64{
+	// 	"soup":           4.99,
+	// 	"pie":            7.99,
+	// 	"salad":          6.99,
+	// 	"toffee padding": 3.55,
+	// }
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	// fmt.Println(menu)
+	// fmt.Println(menu["soup"])
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// looping maps
+	// for key, value := range menu {
+	// 	fmt.Println(key, "-", value)
+	// }
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
+	// ints as key type
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	phonebook := map[int]string{
+		256759847505: "Robert",
+		256759847501: "Robert 1",
+		256759847502: "Robert 2",
+		256759847503: "Robert 3",
+	}
 
-	// nameFour := "Yoshi"
+	// for key, value := range phonebook {
+	// 	fmt.Println(key, "-", value)
+	// }
 
-	// fmt.Println(nameFour, someName, nameOne)
+	phonebook[256759847503] = "bowser"
 
-	// ints
-
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
+	fmt.Println(phonebook)
 
 }
