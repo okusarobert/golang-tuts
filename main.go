@@ -2,43 +2,27 @@ package main
 
 import "fmt"
 
-var someName = "hello"
+func updateName(x *string) {
+	*x = "Okusa"
+}
 
 func main() {
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	name := "Robert"
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	// updateName(name)
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
+	// fmt.Println("memory address of name is : ", &name)
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	m := &name
 
-	// nameFour := "Yoshi"
+	fmt.Println("memory address is: ", m)
+	fmt.Println("value at memory address is: ", *m)
 
-	// fmt.Println(nameFour, someName, nameOne)
+	// fmt.Println(name)
 
-	// ints
+	updateName(m)
 
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
+	fmt.Println(name)
 
 }
