@@ -1,44 +1,40 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-var someName = "hello"
+// void func
+func sayGreeting(n string) {
+	fmt.Printf("Good morning %v \n", n)
+}
 
+func sayBye(n string) {
+	fmt.Printf("Goodbye %v \n", n)
+}
+
+func cycleNames(n []string, f func(string)) {
+	for _, v := range n {
+		f(v)
+	}
+}
+
+// return values
+
+func circleArea(r float64) float64 {
+	return (math.Pi * r * r)
+}
 func main() {
 
-	// variables
-	// strings
-	// var nameOne string = "okusa"
-	// var nameTwo = "robert"
-	// var nameThree string
+	// sayGreeting("Robert")
+	// cycleNames([]string{"Okusa", "Bonny", "Delice"}, sayGreeting)
+	// cycleNames([]string{"Okusa", "Bonny", "Delice"}, sayBye)
 
-	// fmt.Println(nameOne, nameTwo, nameThree)
+	a1 := circleArea(10.5)
+	a2 := circleArea(15)
 
-	// nameOne = "Peach"
-	// nameThree = "bowser"
-
-	// fmt.Println(nameOne, nameTwo, nameThree)
-
-	// nameFour := "Yoshi"
-
-	// fmt.Println(nameFour, someName, nameOne)
-
-	// ints
-
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-	// var numOne int8 = 127
-	// var numTwo int8 = -128
-	// var numThree uint8 = 255
-
-	var scoreOne float32 = 6.8
-	var scoreTwo float64 = 3744894898399939.78
-
-	scoreThree := 37488488484.78
-
+	// fmt.Println(a1, a2)
+	fmt.Printf("circle 1 is %0.3f \n", a1)
+	fmt.Printf("circle 2 is %0.3f \n", a2)
 }
